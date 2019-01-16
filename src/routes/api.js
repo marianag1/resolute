@@ -33,27 +33,58 @@ router.get('/stories', function(req, res) {
 });
 
 // create a new story with the "content" parameter
+// router.post(
+//     '/story',
+//     connect.ensureLoggedIn(),
+//     function(req, res) {
+//       const newStory = new Story({
+//         'creator_id': req.user._id,
+//         'creator_name': req.user.name,
+//         'content': req.body.content,
+//       });
+    
+//       newStory.save(function(err,story) {
+//         User.findOne({ _id: req.user._id },function(err,user) {
+//           user.last_post = req.body.content;
+//           user.save(); // this is OK, because the following lines of code are not reliant on the state of user, so we don't have to shove them in a callback. 
+//           });
+//           // configure socketio
+//         if (err) console.log(err);
+//       });
+  
+//       res.send({});
+//     }
+//   );
+
 router.post(
-    '/story',
-    connect.ensureLoggedIn(),
-    function(req, res) {
-      const newStory = new Story({
-        'creator_id': req.user._id,
-        'creator_name': req.user.name,
-        'content': req.body.content,
+  '/story',
+  connect.ensureLoggedIn(),
+  function(req, res) {
+    const newStory = new Story({
+      'creator_id': req.user._id,
+      'creator_name': req.user.name,
+      'content': req.body.content,
+    });
+
+    newStory.save()
+      .then(story => {
+        const io = req.app.get('socketio');
+        io.emit('story', story);
+
+        // Chain a new promise to find user
+        return User.findOne({_id: req.user._id});
+      })
+      .then(user => {
+        user.last_post = req.body.content;
+        user.save(); 
+      })
+      .catch(err => {
+        // An error occurred!
+        console.log(err);
       });
     
-      newStory.save(function(err,story) {
-        User.findOne({ _id: req.user._id },function(err,user) {
-          user.last_post = req.body.content;
-          user.save(); // this is OK, because the following lines of code are not reliant on the state of user, so we don't have to shove them in a callback. 
-          });
-          // configure socketio
-        if (err) console.log(err);
-      });
-  
-      res.send({});
-    }
-  );
+    res.send({});
+  }
+);
 
 module.exports = router;

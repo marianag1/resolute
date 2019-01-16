@@ -57,38 +57,39 @@ function storyDOMObject(storyJSON, user) {
     post('/api/story', data);
     newStoryInput.value = '';
   }
-  
-  // // makes API requests and calls helper functions
+
   // function renderStories(user) {
-  //   if (user._id !== undefined)
-  //     document.getElementById('new-story').appendChild(newStoryDOMObject());
+  //   // allows to post new stories!
+  //   document.getElementById('new-story').appendChild(newStoryDOMObject());
   
   //   const storiesDiv = document.getElementById('stories');
   //   get('/api/stories', {}, function(storiesArr) {
   //     for (let i = 0; i < storiesArr.length; i++) {
   //       const currentStory = storiesArr[i];
   //       storiesDiv.prepend(storyDOMObject(currentStory, user));
+  
+  //       get('/api/comment', { 'parent': currentStory._id }, function(commentsArr) {
+  //         for (let j = 0; j < commentsArr.length; j++) {
+  //           const currentComment = commentsArr[j];
+  //           const commentDiv = document.getElementById(currentComment.parent + '-comments');
+  //           commentDiv.appendChild(commentDOMObject(currentComment));
+  //         }
+  //       });
   //     }
   //   });
   // }
 
   function renderStories(user) {
-    // allows to post new stories!
-    document.getElementById('new-story').appendChild(newStoryDOMObject());
+    if (user._id !== undefined)
+      document.getElementById('new-story').appendChild(newStoryDOMObject());
   
     const storiesDiv = document.getElementById('stories');
-    get('/api/stories', {}, function(storiesArr) {
-      for (let i = 0; i < storiesArr.length; i++) {
-        const currentStory = storiesArr[i];
-        storiesDiv.prepend(storyDOMObject(currentStory, user));
-  
-        get('/api/comment', { 'parent': currentStory._id }, function(commentsArr) {
-          for (let j = 0; j < commentsArr.length; j++) {
-            const currentComment = commentsArr[j];
-            const commentDiv = document.getElementById(currentComment.parent + '-comments');
-            commentDiv.appendChild(commentDOMObject(currentComment));
-          }
-        });
+    get('/api/stories', {}).then(stories => {
+      for (const story of stories) {
+        storiesDiv.prepend(storyDOMObject(story, user));
       }
+      
+      // is this how you use promise?
+      return Promise.all(stories);
     });
-  }
+  };
