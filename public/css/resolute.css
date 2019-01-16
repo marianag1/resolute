@@ -1,0 +1,97 @@
+/* import fonts */
+@font-face {
+    font-family: "montserratBlack";
+    src: url('fonts/montserrat/Montserrat-Black.otf');
+}
+
+@font-face {
+    font-family: "montserratBlackItalic";
+    src: url('fonts/montserrat/Montserrat-BlackItalic.otf');
+}
+
+@font-face {
+    font-family: "gilroyExtraBold";
+    src: url('fonts/Gilroy/Gilroy-ExtraBold.otf');
+}
+
+@font-face {
+    font-family: "gilroyLight";
+    src: url('fonts/Gilroy/Gilroy-Light.otf');
+}
+
+.navbar-brand {
+    font-family: "gilroyExtraBold";
+    font-size: 1.5em;
+    color: black;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+h1 {
+    font-family: 'montserratBlack';
+    font-size: 4rem;
+    color: black;
+}
+
+.lead {
+    font-weight: bold;
+    color: black;
+}
+
+#top {
+    padding-top: 15rem;
+    padding-bottom: 2rem;
+    margin-bottom: 0rem;
+    background-image: url("../images/red-cropped3.jpeg");
+    background-size: 100%;
+}
+
+#bottom {
+    padding-top: 4rem;
+    background: none;
+}
+
+.text {
+    font-size: 1.4rem;
+    font-family: "Kefa";
+}
+
+.no-margin {
+    line-height: 0rem;
+}
+
+/* #lower-right {
+    background-image: url('../images/leaf.jpeg');
+	bottom: 0%;
+	right: 0%;
+    position: absolute;
+    width: 30%;
+    height: 40%;
+    background-color: red;
+} */
+
+.btn-danger {
+    background-color: #FFCCCB;
+    border-color: #FFCCCB;
+    border-radius: 24px;
+    white-space: normal;
+    color: black;
+    font-family: "gilroyExtraBold";
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+a:hover {
+    color: white;
+}
+
+a.btn:hover {
+    background: rgb(252, 112, 109);
+    border-color: rgb(252, 112, 109);
+}

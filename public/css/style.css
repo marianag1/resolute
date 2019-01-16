@@ -1,0 +1,174 @@
+/* import fonts */
+
+/* @import url('http://fonts.googleapis.com/css?family=Montserrat'); */
+
+@font-face {
+    font-family: "montserratBlack";
+    src: url('fonts/montserrat/Montserrat-Black.otf');
+}
+
+@font-face {
+    font-family: "montserratBlackItalic";
+    src: url('fonts/montserrat/Montserrat-BlackItalic.otf');
+}
+
+@font-face {
+    font-family: "gilroyExtraBold";
+    src: url('fonts/Gilroy/Gilroy-ExtraBold.otf');
+}
+
+@font-face {
+    font-family: "gilroyLight";
+    src: url('fonts/Gilroy/Gilroy-Light.otf');
+}
+
+nav {
+    background-color: rgb(252, 112, 109);
+    /* background: url('images/red-navbar.png'); */
+    /* background-size: 100% 100%; */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.navbar-brand {
+    font-family: "gilroyExtraBold";
+    font-size: 1.5em;
+}
+
+.nav-item{
+    font-family: "gilroyExtraBold";
+    color: black;
+}
+
+.navbar-nav .nav-link {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.container {
+    background-color: white;
+    text-align: center;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.btn-danger {
+    background-color: #FFCCCB;
+    border-color: #FFCCCB;
+    border-radius: 24px;
+    white-space: normal;
+    color: black;
+    font-family: "gilroyExtraBold";
+}
+
+a:hover {
+    color: white;
+}
+
+a.btn:hover {
+    background: rgb(252, 112, 109);
+    border-color: rgb(252, 112, 109);
+}
+
+.resolution-btn {
+    background-color: #FDAF93;
+    border-color: #FDAF93;
+    font-family: "montserratBlackItalic";
+    border-radius: 0px;
+    color: black;
+    font-size: 2rem;
+}
+
+h4 {
+    border-style: solid;
+    border-color: #E0DCDC;
+    background-color: #E0DCDC;
+    font-family: 'gilroyExtraBold';
+    text-align: left;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.input-group {
+    border-style: solid;
+    border-color: #E0DCDC;
+    border-width: 2px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+#story-content-input {
+    border: none;
+}
+
+.story-card {
+    border-style: solid;
+    border-color: #E0DCDC;
+    border-width: 2px;
+    padding: 0.5rem;
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-family: 'gilroyExtraBold';
+    font-size: 1.2rem;
+    color: black;
+}
+
+a.card-title:hover {
+    color: #FDAF93;
+}
+
+.leaderboard-container {
+    border-style: solid;
+    border-color: #E0DCDC;
+    border-width: 2px;
+    padding: 1rem;
+}
+
+.rankings-title {
+    font-family: 'gilroyExtraBold';
+    font-size: 1.2rem;
+    color: black;    
+}
+
+#name-container {
+    font-family: 'montserratBlackItalic';
+}
+
+.profile-card {
+    text-align: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.row.vdivide [class*='col-']:not(:last-child):after {
+    background: #e0e0e0;
+    width: 1px;
+    content: "";
+    display:block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    min-height: 70px;
+  }
+
+.progress {
+    height: 30px;
+}
+
+.main {
+    margin-top: 62px;
+}

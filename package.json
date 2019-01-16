@@ -1,0 +1,28 @@
+{
+  "name": "resolute",
+  "version": "1.0.0",
+  "description": "new year's resolution competition",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mit6148/chris-mckinney-marianag1-tsyacl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mit6148/chris-mckinney-marianag1-tsyacl/issues"
+  },
+  "homepage": "https://github.com/mit6148/chris-mckinney-marianag1-tsyacl#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "http": "0.0.0",
+    "mongoose": "^5.4.4",
+    "nodemon": "^1.18.9",
+    "passport": "^0.4.0"
+  }
+}

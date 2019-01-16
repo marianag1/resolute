@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+
+    <nav class='navbar navbar-expand-sm'>
+      <!-- brand: logo and name -->
+      <div class='navbar-brand' href='#'>
+        <img src="/static/images/logo.png" width="30" height="30" alt="">
+        <!-- width="30" height="30" class="d-inline-block align-top" alt=""> -->
+        RESOLUTE
+      </div>
+      <!-- elements on the left -->
+      <div class='navbar-nav' id='nav-item-container-left'>
+        <!-- navbar items are inserted here -->
+      </div>
+      <!-- elements on the right -->
+      <div class='navbar-nav ml-auto' id='nav-item-container-right'>
+        <!-- buttons are inserted here -->
+      </div>
+    </nav>
+
+    <div class="container main">
+      <div class="row">
+        <div class="col-3 button-container">
+          <!-- button to create a new resolution goes here -->
+          <a role="button" class="btn btn-danger resolution-btn" href='#link'>MAKE A NEW RESOLUTION</a>
+        </div>
+
+        <div class="col-6 feed-container">
+          <h4>Create Post</h4>
+          <div id='new-story'>
+            <!-- new story input will be inserted here -->
+
+            <!-- <div class='input-group'>
+              <input class='form-control' id='story-content-input' type='text' placeholder='What did you achieve today?'>
+                <div class='input-group-append'>
+                  <button class='btn btn-danger'>post</button>
+                </div>
+              </input>
+            </div> -->
+          </div>
+
+          <div id='stories'>
+            <!-- stories are inserted here -->
+
+            <!-- <div id='' class='story-card'>
+              <a class='story-creator card-title' href='/u/profile'>Creator Name</a>
+              <p class='story-content card-text'>Content</p>
+            </div>
+            <div id='' class='story-card'>
+              <a class='story-creator card-title' href='/u/profile'>Nicolas Gomez del Campo</a>
+              <p class='story-content card-text'>I ran 6 miles today.</p>
+            </div>  
+            <div id='' class='story-card'>
+              <a class='story-creator card-title' href='/u/profile'>Sonja Lindberg</a>
+              <p class='story-content card-text'>I'm going to write an endless story here to see if text-wrap is on or if the words just fall off the box.</p>
+            </div>  -->
+
+          </div>
+        </div>
+
+        <div class="col-3 leaderboard-container">
+          <p class='rankings-title'>TODAY'S RANKINGS</p>
+          <div id='rankings'>
+            <!-- rankings are inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="app"></div>
+  </body>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/feed.js"></script>
+  <script src="/static/js/index.js"></script>
+</html>
