@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Choose Your Goal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+  </head>
+  <body>
+
+    <nav class='navbar navbar-expand-sm'>
+      <!-- brand: logo and name -->
+      <a class='navbar-brand' href='/home'>
+        <img src="/static/images/logo.png" width="30" height="30" alt="">
+        <!-- width="30" height="30" class="d-inline-block align-top" alt=""> -->
+        RESOLUTE
+      </a>
+      <!-- elements on the left -->
+      <div class='navbar-nav' id='nav-item-container-left'>
+        <!-- navbar items are inserted here -->
+      </div>
+      <!-- elements on the right -->
+      <div class='navbar-nav ml-auto' id='nav-item-container-right'>
+        <!-- buttons are inserted here -->
+      </div>
+    </nav>
+
+    <div class="container main">
+      <h1 class='goal-title'>CHOOSE YOUR RESOLUTION. START GROWING.</h1>
+
+      <div class="row vdivide mt-4">
+        <div class="col-4">
+          <h4>Read More</h4>
+          <br>
+          <p>How many pages do you want to read by the end of the year?</p>
+          <div id='new-reading-goal'>
+            <!-- insert reading goal here -->
+          </div>
+
+          <!-- <div class='input-group'>
+            <input type='text' placeholder='Type a number here' class='form-control' id='input1'>
+              <div class='input-group-append'>
+                <button class='btn btn-danger'>ADD GOAL</button>
+              </div>
+            </input>
+          </div> 
+          <div class='alert alert-success'>
+            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+            Your goal has been added
+            <i class="fa fa-check"></i>
+          </div>        -->
+
+        </div>
+
+        <div class="col-4">
+          <h4>Exercise More</h4>
+          <br>
+          <p>How many miles do you want to run by the end of the year?</p>
+          <!-- <div id='exercise-goal'>insert exercise goal here</div> -->
+          <div class='input-group'>
+            <input type='text' placeholder='Type a number here' class='form-control' id='input2'>
+              <div class='input-group-append'>
+                <button class='btn btn-danger'>ADD GOAL</button>
+              </div>
+            </input>
+          </div>                 
+        </div>
+    
+        <div class="col-4">
+          <h4>Meditate More</h4>
+          <br>
+          <p>How many minutes do you want to meditate by the end of the year?</p>
+          <!-- <div id='meditate-goal'>insert meditate goal here</div> -->
+          <div class='input-group'>
+            <input type='text' placeholder='Type a number here' class='form-control' id='input3'>
+              <div class='input-group-append'>
+                <button class='btn btn-danger'>ADD GOAL</button>
+              </div>
+            </input>
+          </div>          
+        </div>
+
+
+    </div>
+
+  </body>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/goals.js"></script>
+  <script src="/static/js/render-goals.js"></script>
+</html>
