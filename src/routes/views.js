@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-// get the '/' endpoint to render home.html
+// get the '/home' endpoint to render home.html
 router.get('/home', function(req, res) {
     // second argument is optional, looks in src/views folder
     res.sendFile('home.html', {root: 'src/views'});
@@ -18,6 +18,12 @@ router.get('/u/profile', function(req, res) {
 router.get('/', function(req, res) {
     // second argument is optional, looks in src/views folder
     res.sendFile('resolute.html', {root: 'src/views'});
+});
+
+// get the '/new-goal' endpoint to render goal.html
+router.get('/new-goal', function(req, res) {
+    // second argument is optional, looks in src/views folder
+    res.sendFile('goal.html', {root: 'src/views'});
 });
 
 module.exports = router;

@@ -17,7 +17,7 @@ function storyDOMObject(storyJSON, user) {
   
     const contentSpan = document.createElement('p');
     contentSpan.className = 'story-content card-text';
-    contentSpan.innerHTML = storyJSON.content;
+    contentSpan.innerHTML = 'Number of pages I read today: ' + storyJSON.content;
     card.appendChild(contentSpan);
   
     return card;
@@ -29,7 +29,7 @@ function storyDOMObject(storyJSON, user) {
 
     const newStoryContent = document.createElement('input');
     newStoryContent.setAttribute('type', 'text');
-    newStoryContent.setAttribute('placeholder', 'What did you achieve today?');
+    newStoryContent.setAttribute('placeholder', 'How many pages did you read today?');
     newStoryContent.className = 'form-control';
     newStoryContent.setAttribute('id', 'story-content-input')
     newStoryDiv.appendChild(newStoryContent);
@@ -39,7 +39,7 @@ function storyDOMObject(storyJSON, user) {
     newStoryDiv.appendChild(newStoryButtonDiv);
   
     const newStorySubmit = document.createElement('button');
-    newStorySubmit.innerHTML = 'post';
+    newStorySubmit.innerHTML = 'POST';
     newStorySubmit.className = 'btn btn-danger';
     newStorySubmit.addEventListener('click', submitStoryHandler);
     newStoryButtonDiv.appendChild(newStorySubmit);

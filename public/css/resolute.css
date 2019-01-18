@@ -25,6 +25,10 @@
     color: black;
 }
 
+.navbar-brand:hover {
+    color: black;
+}
+
 .navbar {
     position: fixed;
     top: 0;

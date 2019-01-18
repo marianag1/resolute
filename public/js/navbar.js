@@ -21,6 +21,7 @@ function newNavbarItem(text, url) {
     if (user._id !== undefined) {
       navbarDivLeft.appendChild(newNavbarItem('HOME', '/home'));
       navbarDivLeft.appendChild(newNavbarItem('PROFILE', '/u/profile?'+user._id));
+      navbarDivLeft.appendChild(newNavbarItem('NEW GOAL', '/new-goal'));
       navbarDivRight.appendChild(newNavbarItem('LOG OUT', '/logout'));
     } else {
       navbarDivRight.appendChild(newNavbarItem('LOG IN', '/auth/google'));
