@@ -1,42 +1,39 @@
-// this page doesn't fully work yet
-
 // creates an html block for progress
-function goalDOMObject(goalJSON) {
-    const card = document.createElement('div');
-    card.setAttribute('id', goalJSON._id);
-    card.className = 'goal-card';
-  
-    const contentSpan = document.createElement('p');
-    contentSpan.className = 'goal-content card-text';
-    contentSpan.innerHTML = 'Read ' + goalJSON.content + ' pages by the end of the year.';
-    card.appendChild(contentSpan);
-  
-    return card;
-  }
+// progress and maximum are strings of ints
+function progressDOMObject(progress, maximum) {
+    // do math
+    const value_now = parseInt(progress)/parseInt(maximum)*100;
 
-// progress is an int
-function progressDOMObject(progress) {
     const card = document.createElement('div');
-    
+    card.className = 'progress';
+    const progressBar = document.createElement('div');
+    progressBar.className = "progress-bar bg-success";
+    progressBar.setAttribute('role', "progressbar");
+    progressBar.setAttribute('style', "width: " + value_now.toString() + '%');
+    progressBar.setAttribute('aria-valuenow', value_now.toString());
+    progressBar.setAttribute('aria-valuemin', "0");
+    progressBar.setAttribute('aria-valuemax', maximum);
+    progressBar.innerHTML = value_now.toString() + "%";
+    card.appendChild(progressBar); 
+
+    return card;  
 }
-
-<div class="progress">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-</div>
-
-
 
 function renderProgress(user) {
     if (user._id !== undefined) {            
         const progressDiv = document.getElementById('my-progress');
-        const progress = 0;
+        let progress = 0;
         // get the reading progress
-        get('/api/stories', {}).then(stories => {
+        get('/api/user-stories', {}).then(stories => {
             for (const story of stories) {
-            progress = progress + parseInt(story['content']);
+                progress = progress + parseInt(story['content']);
             }
-            
-        progressDiv.appendChild();
-        });            
+
+            // get the most recent reading goal (as a JSON?)
+            get('/api/one-goal-read', {}).then(goal => {
+                progressDiv.appendChild(progressDOMObject(progress.toString(), goal['content']));
+            });              
+
+        });
     };
 };

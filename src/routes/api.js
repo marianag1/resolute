@@ -27,26 +27,33 @@ router.get('/whoami', function(req, res) {
     });
   });
 
-// fetch stories
+// fetch all stories
 router.get('/stories', function(req, res) {
     Story.find({}, function(err, stories) {
         res.send(stories);
     });
 });
 
-// fetch goals
-router.get('/goals', function(req, res) {
-  Goal.find({}, function(err, goals) {
-      res.send(goals);
+// fetch only user stories
+router.get('/user-stories', function(req, res) {
+  Story.find({creator_id: req.user._id}, function(err, stories) {
+      res.send(stories);
   });
 });
 
-// fetch reading goals
-router.get('/goals-read', function(req, res) {
-  Goal.find({goal_type: 'read'}, function(err, goals) {
-      res.send(goals);
-  });
-});
+// // fetch goals
+// router.get('/goals', function(req, res) {
+//   Goal.find({}, function(err, goals) {
+//       res.send(goals);
+//   });
+// });
+
+// // fetch reading goals
+// router.get('/goals-read', function(req, res) {
+//   Goal.find({goal_type: 'read'}, function(err, goals) {
+//       res.send(goals);
+//   });
+// });
 
 // fetch the most recent reading goal
 router.get('/one-goal-read', function(req, res) {
