@@ -20,11 +20,30 @@
 }
 
 
+table#rankings {
+    font-family: "gilroyLight";
+    text-align: left;
+}
+
+tr:nth-child(2) {background-color: #FFD700}
+tr:nth-child(3) {color:#fff; background-color: #888}
+tr:nth-child(4) {color: #fff; background-color: #A67D3D}
+
+
+
+/*
 #scoreboard {
     width: 255px;
+    display: flex
     height: auto;
 
     }
+
+.scoreboardHeader {
+        display: inline-flex;
+        width: 100% ;
+        height: 20px;
+}
 .scoreboardRow {
     position: relative;
     display: inline-flex;
@@ -35,6 +54,7 @@
 .scoreboardRow:nth-child(2) {background: gold}
 .scoreboardRow:nth-child(3) {background: #B8C2C2}
 .scoreboardRow:nth-child(4) {background: #8C7853}
+
 
 .name {
     position: relative;
@@ -53,9 +73,7 @@
     display: block;
     width: 20%;
 }
+*/
 
-.progressTracker {
-    position: relative;
-    display: block;
-    width: 20%;
-}
+/* fetch user stories
+get goal api.js */
