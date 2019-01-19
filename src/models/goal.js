@@ -2,11 +2,12 @@
 const mongoose = require('mongoose');
 
 // define a schema
-// might need to change the fields here, possibly add a goal category?
+// three types of goals: read, exercise, meditate
 const GoalModelSchema = new mongoose.Schema ({
     creator_id: String, 
     creator_name: String,
-    content: String
+    content: String,
+    goal_type: String
 });
 
 // compile model from schema

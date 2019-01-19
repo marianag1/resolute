@@ -51,33 +51,13 @@ function storyDOMObject(storyJSON, user) {
     const newStoryInput = document.getElementById('story-content-input');
   
     const data = {
-      content: newStoryInput.value,
+      // content: newStoryInput.value,
+      content: parseInt(newStoryInput.value, 10).toString(10),
     };
   
     post('/api/story', data);
     newStoryInput.value = '';
   }
-
-  // function renderStories(user) {
-  //   // allows to post new stories!
-  //   document.getElementById('new-story').appendChild(newStoryDOMObject());
-  
-  //   const storiesDiv = document.getElementById('stories');
-  //   get('/api/stories', {}, function(storiesArr) {
-  //     for (let i = 0; i < storiesArr.length; i++) {
-  //       const currentStory = storiesArr[i];
-  //       storiesDiv.prepend(storyDOMObject(currentStory, user));
-  
-  //       get('/api/comment', { 'parent': currentStory._id }, function(commentsArr) {
-  //         for (let j = 0; j < commentsArr.length; j++) {
-  //           const currentComment = commentsArr[j];
-  //           const commentDiv = document.getElementById(currentComment.parent + '-comments');
-  //           commentDiv.appendChild(commentDOMObject(currentComment));
-  //         }
-  //       });
-  //     }
-  //   });
-  // }
 
   function renderStories(user) {
     if (user._id !== undefined)

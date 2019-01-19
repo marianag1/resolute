@@ -1,4 +1,24 @@
-// fetch stories from our API and create HTML blocks to display their data
+// creates an html block for a goal
+function goalDOMObject(goalJSON) {
+    const card = document.createElement('div');
+    card.setAttribute('id', goalJSON._id);
+    card.className = 'goal-card';
+  
+    const contentSpan = document.createElement('p');
+    contentSpan.className = 'goal-content card-text';
+    contentSpan.innerHTML = 'Read ' + goalJSON.content + ' pages by the end of the year.';
+    card.appendChild(contentSpan);
+  
+    return card;
+  }
+
+function noGoalDOMObject() {
+    const contentSpan = document.createElement('p');
+    contentSpan.className = 'goal-content card-text';
+    contentSpan.innerHTML = 'No reading goal has been set.';
+  
+    return contentSpan;
+} 
 
 function newGoalDOMObject() {
     const newGoalDiv = document.createElement('div');
@@ -8,7 +28,7 @@ function newGoalDOMObject() {
     newGoalContent.setAttribute('type', 'text');
     newGoalContent.setAttribute('placeholder', 'Type a number here');
     newGoalContent.className = 'form-control';
-    newGoalContent.setAttribute('id', 'story-content-input')
+    newGoalContent.setAttribute('id', 'read-goal-input')
     newGoalDiv.appendChild(newGoalContent);
   
     const newGoalButtonDiv = document.createElement('div');
@@ -46,20 +66,32 @@ function newAlertDOMObject() {
   
 // every time button is clicked, add goal
 function submitGoalHandler() {
-    const newGoalInput = document.getElementById('story-content-input');
+    const newGoalInput = document.getElementById('read-goal-input');
   
     const data = {
-      content: parseInt(newGoalInput.value, 10),
+      content: parseInt(newGoalInput.value, 10).toString(10),
+      goal_type: 'read'
     };
   
-    // post('/api/story', data);
+    post('/api/goal-read', data);
     newGoalInput.value = '';
 
     // show alert after button has been clicked
     document.getElementById('new-reading-goal').appendChild(newAlertDOMObject());
   }
 
-function renderGoals(user) {
-    if (user._id !== undefined)
-        document.getElementById('new-reading-goal').appendChild(newGoalDOMObject());
+function renderGoals(user, isProfile) {
+    if (user._id !== undefined) {
+        if (isProfile) {
+            const goalsDiv = document.getElementById('my-goals');
+            // get the most recent reading goal
+            get('/api/one-goal-read', {}).then(goal => {
+                goalsDiv.prepend(goalDOMObject(goal));
+            });       
+                       
+                
+        } else {
+            document.getElementById('new-reading-goal').appendChild(newGoalDOMObject());
+        }
     };
+};
