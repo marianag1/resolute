@@ -5,8 +5,10 @@ const User = require('./models/user');
 
 // set up passport configs
 passport.use(new GoogleStrategy({
-  clientID: '767909816583-82nbp06i8c7bp2b1dqvg0b7nbn0g3ocu.apps.googleusercontent.com',
-  clientSecret: '0DXSzk6hSuR_Ww7WWnatMOkS',
+  // clientID: '767909816583-82nbp06i8c7bp2b1dqvg0b7nbn0g3ocu.apps.googleusercontent.com',
+  // clientSecret: '0DXSzk6hSuR_Ww7WWnatMOkS',
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: '/auth/google/callback'
   // callbackURL: '/home'
 }, function(accessToken, refreshToken, profile, done) {

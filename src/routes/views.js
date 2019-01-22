@@ -26,4 +26,11 @@ router.get('/new-goal', function(req, res) {
     res.sendFile('goal.html', {root: 'src/views'});
 });
 
+// delete this, using for debugging
+// get the '/new-goal' endpoint to render goal.html
+router.get('/profile2', function(req, res) {
+    // second argument is optional, looks in src/views folder
+    res.sendFile('profile2.html', {root: 'src/views'});
+});
+
 module.exports = router;

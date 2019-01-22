@@ -1,0 +1,114 @@
+<!-- testing different version of profile, will do later -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+  </head>
+  <body>
+
+    <nav class='navbar navbar-expand-sm'>
+      <!-- brand: logo and name -->
+      <a class='navbar-brand' href='/home'>
+        <img src="/static/images/logo.png" width="30" height="30" alt="">
+        <!-- width="30" height="30" class="d-inline-block align-top" alt=""> -->
+        RESOLUTE
+      </a>
+      <!-- elements on the left -->
+      <div class='navbar-nav' id='nav-item-container-left'>
+        <!-- navbar items are inserted here -->
+      </div>
+      <!-- elements on the right -->
+      <div class='navbar-nav ml-auto' id='nav-item-container-right'>
+        <!-- buttons are inserted here -->
+      </div>
+    </nav>
+
+    <div class="container main" id="profile-container">
+      <div id="name-container">
+        <!-- <h1>name inserted here</h1> -->
+      </div>
+      <div id="profile-description">
+        <!-- about me inserted here -->
+        <p>Risk taker. Adventurer. Software engineer. Dog lover.</p>
+      </div>      
+      <hr>
+
+      <div class="row vdivide mt-4">
+        <div class="col-4">
+          <h4>My Goals</h4>
+          <br>
+          <div class="text profile-card" id="my-goals">
+            <!-- goals inserted here -->
+          </div>
+        </div>
+        <div class="col-4">
+          <h4>My Rankings</h4>
+          <br>
+          <div class="profile-card" id="rankings-card">
+              <!-- rankings inserted here -->
+              <p>You are number 7 in the leaderboard.</p>
+          </div>
+
+        </div>
+        <div class="col-4">
+          <h4>User Progress</h4>
+          <br>
+          <div id='my-progress'>
+              <!-- user progress inserted here -->
+              <!-- <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+              </div> -->
+
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class='row'>
+        <div class="card">
+          <div class="card-body">
+            This is some text within a card body 1.
+          </div>
+        </div>  
+         <div class="card">
+          <div class="card-body">
+            This is some text within a card body 2.
+          </div>
+        </div> 
+        <div class="card">
+          <div class="card-body">
+            This is some text within a card body 3.
+          </div>
+        </div> 
+        
+      <div class='row'>
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>          
+      </div>  
+        
+      </div>
+
+    </div>
+    
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/goals.js"></script>
+  <script src="/static/js/progress.js"></script>
+  <script src="/static/js/profile.js"></script>
+</html>
+</html>

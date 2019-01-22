@@ -55,9 +55,17 @@ router.get('/user-stories', function(req, res) {
 //   });
 // });
 
+// // fetch the most recent reading goal
+// router.get('/one-goal-read', function(req, res) {
+//   Goal.findOne({creator_id: req.query._id}).sort({$natural: -1}).then(function(goal) {
+//       res.send(goal);
+//   });
+// });
+
+// function above should be correct, not this one (but keep this for now)
 // fetch the most recent reading goal
 router.get('/one-goal-read', function(req, res) {
-  Goal.findOne({goal_type: 'read', creator_id: req.user._id}).sort({$natural: -1}).then(function(goal) {
+  Goal.findOne({}).sort({$natural: -1}).then(function(goal) {   
       res.send(goal);
   });
 });

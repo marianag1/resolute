@@ -85,7 +85,7 @@ function renderGoals(user, isProfile) {
         if (isProfile) {
             const goalsDiv = document.getElementById('my-goals');
             // get the most recent reading goal
-            get('/api/one-goal-read', {}).then(goal => {
+            get('/api/one-goal-read', {'creator_id': user._id}).then(goal => {
                 goalsDiv.prepend(goalDOMObject(goal));
             });       
                        
